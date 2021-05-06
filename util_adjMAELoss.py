@@ -21,9 +21,8 @@ class AdjMSELoss(nn.Module):
         super(AdjMSELoss, self).__init__()
                 
     def forward(self, outputs, labels):
-        loss = (outputs - labels)**2
+        loss = torch.abs(outputs - labels)
         adj_fact = torch.mean(torch.abs(labels)) ** 2
         adj = torch.exp(-outputs * labels / adj_fact) 
-        #adj = torch.exp(-outputs * labels *1000) 
         loss = loss * adj
         return torch.mean(loss)
