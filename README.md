@@ -1,4 +1,5 @@
 # Adjusted-MAE-loss-function
+# DEPRECATED - to be updated
 Adjusted MAE loss function is a custom loss function for Pytorch that integrates a penalty for the difference in sign between the true y and the predicted y. 
 
 Assuming I want to assess an incease or a decrease of a time series (fraffic, electricity consumption, asset price, ...), the sutom loss function penalizes the loss when the predicted y has a different signthan the the true y.
